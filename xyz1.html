@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hawkins Utensils Store</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #1e1e1e;
+    padding: 20px;
+    text-align: center;
+}
+
+header .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    padding: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+#home {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+#home h1 {
+    font-size: 48px;
+}
+
+#home p {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+#home button {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#home button:hover {
+    background-color: #e64a19;
+}
+
+#products {
+    padding: 40px 20px;
+}
+
+#products h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.product {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    width: 250px;
+    margin-bottom: 20px;
+    text-align: center;
+    padding: 20px;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.product h3 {
+    margin: 15px 0;
+}
+
+.product p {
+    margin-bottom: 10px;
+}
+
+.product button {
+    background-color: #ff5722;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product button:hover {
+    background-color: #e64a19;
+}
+
+footer {
+    background-color: #1e1e1e;
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Hawkins Utensils</div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home">
+        <h1>Welcome to Hawkins Utensils Store</h1>
+        <p>Explore our wide range of quality utensils</p>
+        <button onclick="scrollToSection('products')">Shop Now</button>
+    </section>
+
+    <section id="products">
+        <h2>Our Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="https://www.buyhawkins.in/images/products/pressure_cooker.jpg" alt="Pressure Cooker">
+                <h3>Pressure Cooker</h3>
+                <p>Classic, Contura, Stainless Steel</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.buyhawkins.in/images/products/frying_pan.jpg" alt="Frying Pan">
+                <h3>Frying Pan</h3>
+                <p>Non-stick, Cast Iron</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.buyhawkins.in/images/products/tava.jpg" alt="Tava">
+                <h3>Tava</h3>
+                <p>Hard Anodised, Ceramic Nonstick</p>
+                <button>Add to Cart</button>
+            </div>
+            <div class="product">
+                <img src="https://www.buyhawkins.in/images/products/kadhai.jpg" alt="Kadhai">
+                <h3>Kadhai</h3>
+                <p>Deep, Shallow, Non-stick</p>
+                <button>Add to Cart</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>About Us</h2>
+        <p>Hawkins has been serving quality kitchenware for decades. Our mission is to bring the best products to your kitchen.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Hawkins Utensils Store. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
