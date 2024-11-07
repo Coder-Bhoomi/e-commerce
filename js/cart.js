@@ -1,71 +1,54 @@
-// Sample product data
-const products = [
-    { id: 1, name: "Product A", price: 20.00, image: "path_to_product_image" },
-    { id: 2, name: "Product B", price: 15.00, image: "path_to_product_image" },
-    { id: 3, name: "Product C", price: 25.00, image: "path_to_product_image" }
-];
+// Update cart on page load and whenever quantity changes
+document.addEventListener("DOMContentLoaded", () => {
+    updateCart();
+});
 
-// Function to calculate total price
-function calculateTotal() {
-    let total = 0;
+function updateCart() {
+    let subtotal = 0;
     document.querySelectorAll('.cart-item').forEach(item => {
-        const price = parseFloat(item.dataset.price);
+        const price = parseFloat(item.querySelector('.item-price').getAttribute('data-price'));
         const quantity = parseInt(item.querySelector('.quantity-input').value);
-        total += price * quantity;
+        const itemTotal = price * quantity;
+        item.querySelector('.item-price').textContent = `$${itemTotal.toFixed(2)}`;
+        subtotal += itemTotal;
     });
+
+    const discount = 0; // Add logic for discount if needed
+    const tax = subtotal * 0.10;
+    const total = subtotal - discount + tax;
+    
+    document.getElementById('subtotal-price').textContent = `$${subtotal.toFixed(2)}`;
+    document.getElementById('discount-price').textContent = `$${discount.toFixed(2)}`;
+    document.getElementById('tax-price').textContent = `$${tax.toFixed(2)}`;
     document.getElementById('total-price').textContent = `$${total.toFixed(2)}`;
 }
 
-// Function to update quantity
-function updateQuantity(event) {
-    const quantityInput = event.target;
-    if (quantityInput.value < 1) {
-        quantityInput.value = 1; // Prevent negative quantity
-    }
-    calculateTotal();
+function addItem() {
+    const newItem = `
+    <div class="cart-item d-flex align-items-center">
+        <div class="col-2">
+            <img src="image-placeholder.jpg" alt="Product Image" class="img-fluid rounded">
+        </div>
+        <div class="col-3">
+            <p class="mb-1">New Product</p>
+            <small class="text-muted">Short description</small>
+        </div>
+        <div class="col-2">
+            <input type="number" class="form-control quantity-input" min="1" value="1" onchange="updateCart()">
+        </div>
+        <div class="col-2 text-success fw-bold item-price" data-price="150">$150.00</div>
+        <div class="col-2 text-end">
+            <button class="btn btn-outline-danger btn-sm" onclick="removeItem(this)">Delete</button>
+        </div>
+    </div>`;
+    document.getElementById('cart-items').insertAdjacentHTML('beforeend', newItem);
+    updateCart();
 }
 
-// Function to remove item
-function removeItem(event) {
-    const itemRow = event.target.closest('.cart-item');
-    itemRow.remove();
-    calculateTotal();
+function removeItem(button) {
+    button.closest('.cart-item').remove();
+    updateCart();
 }
 
-// Function to render cart items
-function renderCart() {
-    const cartBody = document.getElementById('cart-body');
-    products.forEach(product => {
-        const tr = document.createElement('tr');
-        tr.classList.add('cart-item');
-        tr.dataset.price = product.price;
-        tr.innerHTML = `
-            <td>
-                <div class="product-info">
-                    <img src="${product.image}" alt="${product.name}" class="product-image">
-                    <span>${product.name}</span>
-                </div>
-            </td>
-            <td>$${product.price.toFixed(2)}</td>
-            <td>
-                <input type="number" value="1" min="1" class="quantity-input">
-            </td>
-            <td>$${product.price.toFixed(2)}</td>
-            <td><button class="remove-btn">Remove</button></td>
-        `;
-        cartBody.appendChild(tr);
-    });
-
-    // Attach event listeners to quantity inputs and remove buttons
-    document.querySelectorAll('.quantity-input').forEach(input => {
-        input.addEventListener('input', updateQuantity);
-    });
-    document.querySelectorAll('.remove-btn').forEach(button => {
-        button.addEventListener('click', removeItem);
-    });
-
-    calculateTotal();
-}
-
-// Initial render
-renderCart();
+// Initial calculation on page load
+updateCart();

@@ -1,176 +1,221 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cart</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/style.css">
+    <title>Shopping Cart</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-</head>
-<body>
+    <link rel="stylesheet" href="css/cart.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/cart.js"></script>
+  </head>
+  <body style="background-color: #ffffff; color: black;">
+
     <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1f1f1f;">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#">
-        <img src="images/2.png" alt="Logo" class="logo">
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse left-item" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#">Home</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categories
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-              <li><a class="dropdown-item" href="cooker.html">Pressure Cooker</a></li>
-              <li><a class="dropdown-item" href="frypan.html">Fry Pan</a></li>
-              <li><a class="dropdown-item" href="tava.html">Tava</a></li>
-              <li><a class="dropdown-item" href="deepfry.html">Deep Fry Pan</a></li>
-              <li><a class="dropdown-item" href="saucepan.html">Saucepan</a></li>
-              <li><a class="dropdown-item" href="handi.html">Handi &amp; Bowl</a></li>
-              <li><a class="dropdown-item" href="stewpot.html">Stewpot</a></li>
-              <li><a class="dropdown-item" href="pan.html">Pan</a></li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Contact Us</a>
-          </li>
-          <li class="nav-item">
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success " type="submit">Search</button>
-            </form>
-          </li>
-        </ul>
-        <a class="navbar-brand" href="#">
-          <i class="fa-solid fa-cart-shopping" style="color: #ffff; margin-left: 20px;"></i>
-        </a>
-        <a class="navbar-brand" href="#">
-          <i class="fa-solid fa-heart" style="color: #ffff;"></i>
-        </a>
-        <a class="navbar-brand" href="#">
-          <i class="fa-solid fa-user" style="color: #ffff;"></i>
-        </a>
+    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1f1f1f;">
+      <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+              <img src="images/logo1.png" alt="Logo" class="logo">
+          </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse left-item" id="navbarNav">
+              <ul class="navbar-nav ms-auto">
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Home</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                          Categories
+                      </a>
+                      <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
+                          <li><a class="dropdown-item" href="cooker.html">Pressure Cooker</a></li>
+                          <li><a class="dropdown-item" href="frypan.html">Fry Pan</a></li>
+                          <li><a class="dropdown-item" href="tava.html">Tava</a></li>
+                          <li><a class="dropdown-item" href="deepfry.html">Deep Fry Pan</a></li>
+                          <li><a class="dropdown-item" href="saucepan.html">Saucepan</a></li>
+                          <li><a class="dropdown-item" href="handi.html">Handi &amp; Bowl</a></li>
+                          <li><a class="dropdown-item" href="stewpot.html">Stewpot</a></li>
+                          <li><a class="dropdown-item" href="pan.html">Pan</a></li>
+                      </ul>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">About Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="#">Contact Us</a>
+                  </li>
+                  <li class="nav-item">
+                      <form class="d-flex">
+                          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                          <button class="btn btn-outline-success " type="submit">Search</button>
+                      </form>
+                  </li>
+              </ul>
+              <a class="navbar-brand" href="cart.html">
+                  <i class="fa-solid fa-cart-shopping" style="color: #ffff; margin-left: 20px;"></i>
+              </a>
+              <a class="navbar-brand" href="#">
+                  <i class="fa-solid fa-heart" style="color: #ffff;"></i>
+              </a>
+              <a class="navbar-brand" href="#">
+                  <i class="fa-solid fa-user" style="color: #ffff;"></i>
+              </a>
+          </div>
       </div>
-    </div>
-  </nav>
+    </nav>
 
-  <!-- cart -->
-  <div class="container my-5">
-    <h2 class="mb-4">Cart</h2>
-    
-    <!-- Cart Items Section -->
-    <div class="cart-item mb-3">
-        <div class="row align-items-center">
-            <div class="col-2">
-                <img src="image-placeholder.jpg" alt="Product Image" class="img-fluid">
-            </div>
-            <div class="col-4">
-                <p>Description</p>
-            </div>
-            <div class="col-2">
-                <input type="number" class="form-control" value="1" min="1">
-            </div>
-            <div class="col-2">
-                <p>Price</p>
-            </div>
-            <div class="col-2 text-end">
-                <button class="btn btn-danger btn-sm">Delete</button>
-            </div>
+    <!-- Cart -->
+    <div class="container cart-container my-4">
+      <h2 class="text-center mb-4 fw-bold">Shopping Cart</h2>
+        
+      <div id="cart-items">
+        <!-- Cart Item 1 -->
+        <div class="cart-item d-flex align-items-center">
+          <div class="col-2">
+            <img src="images/cooker.jpg" alt="Product Image" class="img-fluid rounded">
+          </div>
+          <div class="col-3">
+            <p class="mb-1 mx-5">Product Name</p>
+          </div>
+          <div class="col-2">
+            <input type="number" class="form-control quantity-input" min="1" value="1" onchange="updateCart()">
+          </div>
+          <div class="col-2 text-success fw-bold item-price text-center" data-price="100">$100.00</div>
+          <div class="col-2 text-end">
+            <button class="btn btn-outline-danger btn-sm" onclick="removeItem(this)">Delete</button>
+          </div>
         </div>
-    </div>
 
-    <!-- Repeat cart-item for additional items -->
-    
-    <!-- Coupon Section -->
-    <div class="coupon-section my-4">
-        <h5>Coupon</h5>
+        <!-- Cart Item 2 -->
+        <div class="cart-item d-flex align-items-center">
+          <div class="col-2">
+            <img src="images/cooker.jpg" alt="Product Image" class="img-fluid rounded">
+          </div>
+          <div class="col-3">
+            <p class="mb-1 mx-5">Product Name</p>
+          </div>
+          <div class="col-2">
+            <input type="number" class="form-control quantity-input" min="1" value="1" onchange="updateCart()">
+          </div>
+          <div class="col-2 text-success fw-bold item-price text-center" data-price="100">$100.00</div>
+          <div class="col-2 text-end">
+            <button class="btn btn-outline-danger btn-sm" onclick="removeItem(this)">Delete</button>
+          </div>
+        </div>
+
+        <!-- Cart Item 3 -->
+        <div class="cart-item d-flex align-items-center">
+          <div class="col-2">
+            <img src="images/cooker.jpg" alt="Product Image" class="img-fluid rounded">
+          </div>
+          <div class="col-3">
+            <p class="mb-1 mx-5">Product Name</p>
+          </div>
+          <div class="col-2">
+            <input type="number" class="form-control quantity-input" min="1" value="1" onchange="updateCart()">
+          </div>
+          <div class="col-2 text-success fw-bold item-price text-center" data-price="100">$100.00</div>
+          <div class="col-2 text-end">
+            <button class="btn btn-outline-danger btn-sm" onclick="removeItem(this)">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coupon Section -->
+      <div class="coupon-section">
+        <h5 class="fw-bold mx-1">Coupon</h5>
         <div class="input-group">
-            <input type="text" class="form-control" placeholder="Coupon Code">
-            <button class="btn btn-primary">Apply</button>
+          <input type="text" class="form-control" placeholder="Coupon Code">
+          <button class="btn btn-primary">Apply</button>
         </div>
-        <p class="mt-2">Discount</p>
-    </div>
+        <p class="mt-2 text-muted mx-1">Discount will be applied here.</p>
+      </div>
 
-    <!-- Summary Section -->
-    <div class="summary-section">
+      <!-- Summary Section -->
+      <div class="summary-section">
+        <h5 class="fw-bold">Order Summary</h5>
         <div class="d-flex justify-content-between">
-            <p>Subtotal</p>
-            <p>Price</p>
+          <p>Subtotal</p>
+          <p id="subtotal-price" class="fw-bold">$0.00</p>
         </div>
         <div class="d-flex justify-content-between">
-            <p>Discount</p>
-            <p>Price</p>
+          <p>Discount</p>
+          <p id="discount-price" class="fw-bold">$0.00</p>
         </div>
         <div class="d-flex justify-content-between">
-            <p>Tax</p>
-            <p>Price</p>
+          <p>Tax (10%)</p>
+          <p id="tax-price" class="fw-bold">$0.00</p>
         </div>
         <hr>
         <div class="d-flex justify-content-between">
-            <h5>Total</h5>
-            <h5>Price</h5>
-        </div>
-    </div>
-
-    <!-- Action Buttons -->
-    <div class="action-buttons mt-4">
-        <button class="btn btn-success w-100 mb-2">Checkout</button>
-        <button class="btn btn-secondary w-100">Continue Shopping</button>
-    </div>
-</div>
-
-
-  <!-- Footer -->
-  <footer class="footer text-center mt-5">
-    <div class="container">
-      <div class="row">
-        <!-- Image Section -->
-        <div class="col-md-3 mt-3">
-          <img src="/images/2.png" alt="Company Logo" class="logo">
-          <p class="powered-by">Powered By: <strong>Kanhaiyalal Pragdas Bartan Wale</strong></p>
-        </div>
-  
-        <!-- Product Series Links -->
-        <div class="col-md-3 mt-3">
-          <h5 class="fw-bold">Product Series</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">Cooker</a></li>
-            <li><a href="#" class="text-white">Cookware</a></li>
-            <li><a href="#" class="text-white">Gift-Items</a></li>
-            <li><a href="#" class="text-white">Frying Pans</a></li>
-            <li><a href="#" class="text-white">Handi</a></li>
-          </ul>
-        </div>
-        <!-- Quick Links -->
-        <div class="col-md-3 mt-3">
-          <h5 class="fw-bold">Quick Links</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-white">About Us</a></li>
-            <li><a href="#" class="text-white">Privacy Policy</a></li>
-            <li><a href="#" class="text-white">Terms &amp; Conditions</a></li>
-            <li><a href="#" class="text-white">Contact Us</a></li>
-            <li><a href="#" class="text-white">Return &amp; Exchange</a></li>
-          </ul>
-        </div>
-
-        <!-- Connect With Us -->
-        <div class="col-md-3 mt-3">
-          <h5 class="fw-bold">Connect With Us</h5>
-          <p class="mb-1">+91-9598050345<br> (Girish Chandra Agarwal)</p>
-          <p>+91-9598050348<br> (Anubhav Agarwal)</p>
+          <h5>Total</h5>
+          <h5 id="total-price" class="fw-bold">$0.00</h5>
         </div>
       </div>
-    </div>
-    <hr>
-    <p>© 2024 | Kanhaiyalal Pragdas Bartan Wale | All Rights Reserved.</p>
-  </footer>
 
-</body></html>
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button class="btn btn-success w-100 mb-2" style="background-color: #DD7210; border-color: #DD7210;">Checkout</button>
+        <button class="btn btn-secondary w-100" onclick="addItem()">Continue Shopping</button>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container text-center">
+          <div class="row">
+              <!-- Image Section -->
+              <div class="col-md-3 mt-5">
+              <img src="images/logo1.png" alt="Company Logo" class="logo">
+              <p class="powered-by">Powered By: <strong>Kanhaiyalal Pragdas Bartan Wale</strong></p>
+              </div>
+      
+              <!-- Product Series Links -->
+              <div class="col-md-3 mt-4">
+              <h5 class="fw-bold">Product Series</h5>
+              <ul class="list-unstyled">
+                  <li><a href="#" class="text-white">Cooker</a></li>
+                  <li><a href="#" class="text-white">Cookware</a></li>
+                  <li><a href="#" class="text-white">Gift-Items</a></li>
+                  <li><a href="#" class="text-white">Frying Pans</a></li>
+                  <li><a href="#" class="text-white">Handi</a></li>
+              </ul>
+              </div>
+
+              <!-- Quick Links -->
+              <div class="col-md-3 mt-4">
+              <h5 class="fw-bold">Quick Links</h5>
+              <ul class="list-unstyled">
+                  <li><a href="#" class="text-white">About Us</a></li>
+                  <li><a href="#" class="text-white">Privacy Policy</a></li>
+                  <li><a href="#" class="text-white">Terms &amp; Conditions</a></li>
+                  <li><a href="#" class="text-white">Contact Us</a></li>
+                  <li><a href="#" class="text-white">Return &amp; Exchange</a></li>
+              </ul>
+              </div>
+      
+              <!-- Connect With Us -->
+              <div class="col-md-3 mt-4">
+              <h5 class="fw-bold">Connect With Us</h5>
+              <p class="mb-1">+91-9598050345<br> (Girish Chandra Agarwal)</p>
+              <p>+91-9598050348<br> (Anubhav Agarwal)</p>
+              </div>
+
+              <!-- Social Media Icons -->
+              <div class="social-icons mt-4">
+                  <a class="social" href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                  <a class="social" href="#"><i class="fa-brands fa-square-x-twitter"></i></a>
+                  <a class="social" href="#"><i class="fa-brands fa-square-facebook"></i></a>
+                  <a class="social" href="#"><i class="fa-brands fa-square-whatsapp"></i></a>
+              </div>
+          </div>
+      </div>
+      <hr class="footer-divider">
+      <p class="footer-copyright text-center">©2024 | Kanhaiyalal Pragdas Bartan Wale | All Rights Reserved.</p>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
